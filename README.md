@@ -67,7 +67,6 @@ On example is excluding every single java file with prefix name Spring. You can 
 All excluded Java sources are not compiled (that means you dont need dependencies for it) when jar file is created.
 
 ```xml
- <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
@@ -89,7 +88,6 @@ Exclusion is done also with [maven-compiler-plugin](https://maven.apache.org/plu
 In this example are excluded all tests in directory standalone. This test are not compiled (that means you dont need dependencies for it) when jar file is created.
 
 ```xml
-<plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
@@ -120,7 +118,7 @@ In this example are excluded all tests in directory standalone. This test are no
 Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored are all tests in standalone directory.
 
 ```xml
-<plugin>
+		     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${surefire.version}</version>
