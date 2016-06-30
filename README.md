@@ -309,6 +309,9 @@ After build is created file **standalone-spring-boot.jar**.
 16 directories, 104 files
 ```
 
+After build ...
+
+
 ```shell
 java -jar standalone-spring-boot.jar
 localhost:8080/jsondoc-ui.html
