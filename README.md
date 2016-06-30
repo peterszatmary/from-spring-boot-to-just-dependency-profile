@@ -308,3 +308,5 @@ After build is created file **standalone-spring-boot.jar**.
 
 16 directories, 104 files
 ```
+
+[!jsondoc](https://github.com/peterszatmary/just-like-that/blob/master/imgs/spring-boot-standalone-dependency-profiles/jsondoc.png)
