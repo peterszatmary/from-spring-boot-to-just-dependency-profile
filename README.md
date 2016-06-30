@@ -44,16 +44,16 @@ In build tag
 
 
 ```xml
-			<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application.properties</exclude>
-							<!-- add here more if you need exclude additional files -->
-						</excludes>
-						<filtering>false</filtering>
-					</resource>
-				</resources>
+<resources>
+	<resource>
+		<directory>src/main/resources</directory>
+		<excludes>
+			<exclude>application.properties</exclude>
+			<!-- add here more if you need exclude additional files -->
+		</excludes>
+	<filtering>false</filtering>
+	</resource>
+</resources>
 ```
 
 Because project is simple we have just one properties file that we dont want to have in our minimalistic dependency jar. In tag **excludes** you can add as many exclusions as you would like to have. 
@@ -67,18 +67,18 @@ On example is excluding every single java file with prefix name Spring. You can 
 All excluded Java sources are not compiled (that means you dont need dependencies for it) when jar file is created.
 
 ```xml
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${compiler.plugin.version}</version>
-                    
-                        <configuration>
-                            <excludes>
-                                <exclude>**/Spring*.java</exclude><!-- by prefix strategy -->
-                                <!-- add here more if you need exclude additional files -->
-                            </excludes>
-                        </configuration>
-                    </plugin>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<version>${compiler.plugin.version}</version>
+
+	<configuration>
+	    <excludes>
+	        <exclude>**/Spring*.java</exclude><!-- by prefix strategy -->
+	        <!-- add here more if you need exclude additional files -->
+	    </excludes>
+	</configuration>
+</plugin>
 ```
 
 
@@ -88,27 +88,27 @@ Exclusion is done also with [maven-compiler-plugin](https://maven.apache.org/plu
 In this example are excluded all tests in directory standalone. This test are not compiled (that means you dont need dependencies for it) when jar file is created.
 
 ```xml
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>${compiler.plugin.version}</version>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-compiler-plugin</artifactId>
+	<version>${compiler.plugin.version}</version>
 
-                        <executions>
-                            <execution>
-                                <id>default-testCompile</id>
-                                <phase>test-compile</phase>
-                                <goals>
-                                    <goal>testCompile</goal>
-                                </goals>
-                                <configuration>
-                                    <testExcludes>
-                                        <exclude>**/standalone/*.java</exclude>
-                                        <!-- add here more if you need exclude additional files -->
-                                    </testExcludes>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+	<executions>
+	    <execution>
+	        <id>default-testCompile</id>
+	        <phase>test-compile</phase>
+	        <goals>
+	            <goal>testCompile</goal>
+	        </goals>
+	        <configuration>
+	            <testExcludes>
+	                <exclude>**/standalone/*.java</exclude>
+	                <!-- add here more if you need exclude additional files -->
+	            </testExcludes>
+	        </configuration>
+	    </execution>
+	</executions>
+</plugin>
 ```
 
 
@@ -118,16 +118,16 @@ In this example are excluded all tests in directory standalone. This test are no
 Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored are all tests in standalone directory.
 
 ```xml
-		     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>${surefire.version}</version>
-                        <configuration>
-                            <excludes>
-                                <exclude>**/src/test/java/**/standalone/**.java</exclude><!-- in directory strategy -->
-                            </excludes>
-                        </configuration>
-                    </plugin>
+<plugin>
+	<groupId>org.apache.maven.plugins</groupId>
+	<artifactId>maven-surefire-plugin</artifactId>
+	<version>${surefire.version}</version>
+	<configuration>
+	    <excludes>
+	        <exclude>**/src/test/java/**/standalone/**.java</exclude><!-- in directory strategy -->
+	    </excludes>
+	</configuration>
+</plugin>
 ```
 
 
