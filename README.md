@@ -159,8 +159,152 @@ mvn clean install -P just-dependency
 
 ## Result after just-dependency profile
 
-....
+After build is created file **just-dependency.jar**.
+
+```shell
+├── com
+│   └── szatmary
+│       └── peter
+│           ├── ApplicationController.class
+│           ├── Car.class
+│           └── Owner.class
+└── META-INF
+    ├── MANIFEST.MF
+    └── maven
+        └── com.szatmary.peter
+            └── spring-boot-standalone-dependency-profiles
+                ├── pom.properties
+                └── pom.xml
+
+7 directories, 6 files
+```
+
 
 ## Result after spring-boot-standalone profile
 
-....
+After build is created file **standalone-spring-boot.jar**.
+
+```shell
+├── application.properties
+├── com
+│   └── szatmary
+│       └── peter
+│           ├── ApplicationController.class
+│           ├── Car.class
+│           ├── Owner.class
+│           └── SpringbootJsondocApplication.class
+├── lib
+│   ├── annotations-2.0.1.jar
+│   ├── aopalliance-1.0.jar
+│   ├── classmate-1.1.0.jar
+│   ├── guava-15.0.jar
+│   ├── hibernate-validator-5.2.4.Final.jar
+│   ├── jackson-annotations-2.6.6.jar
+│   ├── jackson-core-2.6.6.jar
+│   ├── jackson-databind-2.6.6.jar
+│   ├── javassist-3.18.1-GA.jar
+│   ├── jboss-logging-3.3.0.Final.jar
+│   ├── jcl-over-slf4j-1.7.21.jar
+│   ├── jsondoc-core-1.2.15.jar
+│   ├── jsondoc-springmvc-1.2.15.jar
+│   ├── jsondoc-ui-webjar-1.2.15.jar
+│   ├── jul-to-slf4j-1.7.21.jar
+│   ├── log4j-over-slf4j-1.7.21.jar
+│   ├── logback-classic-1.1.7.jar
+│   ├── logback-core-1.1.7.jar
+│   ├── lombok-1.16.8.jar
+│   ├── reflections-0.9.10.jar
+│   ├── slf4j-api-1.7.21.jar
+│   ├── snakeyaml-1.16.jar
+│   ├── spring-aop-4.2.6.RELEASE.jar
+│   ├── spring-beans-4.2.6.RELEASE.jar
+│   ├── spring-boot-1.3.5.RELEASE.jar
+│   ├── spring-boot-autoconfigure-1.3.5.RELEASE.jar
+│   ├── spring-boot-starter-1.3.5.RELEASE.jar
+│   ├── spring-boot-starter-jsondoc-1.2.15.jar
+│   ├── spring-boot-starter-logging-1.3.5.RELEASE.jar
+│   ├── spring-boot-starter-tomcat-1.3.5.RELEASE.jar
+│   ├── spring-boot-starter-validation-1.3.5.RELEASE.jar
+│   ├── spring-boot-starter-web-1.3.5.RELEASE.jar
+│   ├── spring-context-4.2.6.RELEASE.jar
+│   ├── spring-core-4.2.6.RELEASE.jar
+│   ├── spring-expression-4.2.6.RELEASE.jar
+│   ├── spring-web-4.2.6.RELEASE.jar
+│   ├── spring-webmvc-4.2.6.RELEASE.jar
+│   ├── tomcat-embed-core-8.0.33.jar
+│   ├── tomcat-embed-el-8.0.33.jar
+│   ├── tomcat-embed-logging-juli-8.0.33.jar
+│   ├── tomcat-embed-websocket-8.0.33.jar
+│   └── validation-api-1.1.0.Final.jar
+├── META-INF
+│   ├── MANIFEST.MF
+│   └── maven
+│       └── com.szatmary.peter
+│           └── spring-boot-standalone-dependency-profiles
+│               ├── pom.properties
+│               └── pom.xml
+└── org
+    └── springframework
+        └── boot
+            └── loader
+                ├── archive
+                │   ├── Archive.class
+                │   ├── Archive$Entry.class
+                │   ├── Archive$EntryFilter.class
+                │   ├── Archive$EntryRenameFilter.class
+                │   ├── ExplodedArchive$1.class
+                │   ├── ExplodedArchive.class
+                │   ├── ExplodedArchive$FileEntry.class
+                │   ├── ExplodedArchive$FileNotFoundURLConnection.class
+                │   ├── ExplodedArchive$FilteredURLStreamHandler.class
+                │   ├── FilteredArchive$1.class
+                │   ├── FilteredArchive$2.class
+                │   ├── FilteredArchive.class
+                │   ├── JarFileArchive$1.class
+                │   ├── JarFileArchive.class
+                │   └── JarFileArchive$JarFileEntry.class
+                ├── data
+                │   ├── ByteArrayRandomAccessData.class
+                │   ├── RandomAccessData.class
+                │   ├── RandomAccessDataFile.class
+                │   ├── RandomAccessDataFile$DataInputStream.class
+                │   ├── RandomAccessDataFile$FilePool.class
+                │   └── RandomAccessData$ResourceAccess.class
+                ├── ExecutableArchiveLauncher$1.class
+                ├── ExecutableArchiveLauncher.class
+                ├── InputArgumentsJavaAgentDetector$1.class
+                ├── InputArgumentsJavaAgentDetector.class
+                ├── jar
+                │   ├── Bytes.class
+                │   ├── CentralDirectoryEndRecord.class
+                │   ├── Handler.class
+                │   ├── JarEntry.class
+                │   ├── JarEntryData.class
+                │   ├── JarEntryFilter.class
+                │   ├── JarFile$1.class
+                │   ├── JarFile$2.class
+                │   ├── JarFile.class
+                │   ├── JarURLConnection$1.class
+                │   ├── JarURLConnection.class
+                │   ├── JarURLConnection$JarEntryName.class
+                │   └── ZipInflaterInputStream.class
+                ├── JarLauncher.class
+                ├── JavaAgentDetector.class
+                ├── LaunchedURLClassLoader$1.class
+                ├── LaunchedURLClassLoader.class
+                ├── LaunchedURLClassLoader$Java7LockProvider.class
+                ├── LaunchedURLClassLoader$LockProvider.class
+                ├── LaunchedURLClassLoader$ResourceEnumeration.class
+                ├── Launcher.class
+                ├── MainMethodRunner.class
+                ├── PropertiesLauncher$1.class
+                ├── PropertiesLauncher$ArchiveEntryFilter.class
+                ├── PropertiesLauncher.class
+                ├── PropertiesLauncher$PrefixMatchingArchiveFilter.class
+                ├── util
+                │   ├── AsciiBytes.class
+                │   └── SystemPropertyUtils.class
+                └── WarLauncher.class
+
+16 directories, 104 files
+```
