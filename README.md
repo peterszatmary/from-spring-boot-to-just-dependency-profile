@@ -1,5 +1,5 @@
 # spring-boot-standalone-dependency-profiles
-Maven profiles for building standalone spring-boot app or just simple minimal dependency.
+Maven profiles for building standalone spring-boot app or just simple minimal dependency from same project.
 
 
 ## Purpose
