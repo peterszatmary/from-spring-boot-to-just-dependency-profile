@@ -31,10 +31,10 @@ We have to deal with this 3 basic Maven phases :
 
 Project does 4 different exclusion to achieve the goal.
 
-- resource
-- Java sources exclusion from compile phase
-- Tests exclusion from test compile phase
-- Tests exclusion from testing phase
+- **resource**
+- **ava sources** exclusion from compile phase
+- **Tests exclusion** from test compile phase
+- **Tests exclusion** from testing phase
 
 All exclusions are done in just-dependency profile of cource.
 
@@ -135,7 +135,7 @@ Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/
 
 
 
-- Project have shared dependencies. ....
+- Some dependencies are just for spring-boot-standalone version. just-dependency have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See pom file. TODO
 
 
 
