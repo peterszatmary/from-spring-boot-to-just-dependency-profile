@@ -139,15 +139,23 @@ Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/
 
 
 
-## How to run
+## How to run it
 
 
-From from your preffered IDE or from command line 
+From from your preffered IDE or from command line.
+
+Standalone Spring Boot executable jar file 
+
+```shell
+mvn clean install -P spring-boot-standalone
+```
+
+Dependency jar file
 
 ```shell
 mvn clean install -P just-dependency
-mvn clean install -P spring-boot-standalone
 ```
+
 
 ## Result after just-dependency profile
 
