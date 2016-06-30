@@ -115,7 +115,7 @@ In this example are excluded all tests in directory standalone. This test are no
 ### How to exclude Tests from testing phase
 
 
-Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored are all tests in standalone directory.
+Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored (not ran) are all tests in standalone directory.
 
 ```xml
 <plugin>
@@ -131,11 +131,11 @@ Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/
 ```
 
 
------------------------
+## Notes
 
 
+- Some dependencies are just for spring-boot-standalone version. just-dependency profile have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See pom file. But you need dependencies that are just special for just-dependency profile fill free add them with dependencies tag. TODO
 
-- Some dependencies are just for spring-boot-standalone version. just-dependency have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See pom file. TODO
 
 
 
