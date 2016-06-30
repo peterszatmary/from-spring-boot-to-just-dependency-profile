@@ -31,8 +31,8 @@ We have to deal with this 3 basic Maven phases :
 
 Project does 4 different exclusion to achieve the goal.
 
-- **resource**
-- **ava sources** exclusion from compile phase
+- **resources** exclusion
+- **Java sources** exclusion from compile phase
 - **Tests exclusion** from test compile phase
 - **Tests exclusion** from testing phase
 
