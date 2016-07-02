@@ -66,6 +66,8 @@ On example is excluding every single java file with prefix name Spring. You can 
 
 All excluded Java sources are not compiled (that means you dont need dependencies for it) when jar file is created.
 
+In tag **excludes** you can add as many exclusions as you would like to have. 
+
 ```xml
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -86,6 +88,8 @@ All excluded Java sources are not compiled (that means you dont need dependencie
 
 Exclusion is done also with [maven-compiler-plugin](https://maven.apache.org/plugins/maven-compiler-plugin/).
 In this example are excluded all tests in directory standalone. This test are not compiled (that means you dont need dependencies for it) when jar file is created.
+
+In tag **excludes** you can add as many exclusions as you would like to have. 
 
 ```xml
 <plugin>
@@ -117,6 +121,8 @@ In this example are excluded all tests in directory standalone. This test are no
 
 Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored (not ran) are all tests in standalone directory.
 
+In tag **excludes** you can add as many exclusions as you would like to have. 
+
 ```xml
 <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
@@ -134,12 +140,12 @@ Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/
 ## Notes
 
 
-- Some dependencies are just for spring-boot-standalone version. just-dependency profile have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See pom file. If  you need dependencies that are just for just-dependency profile, fill free add them with dependencies tag.
+- Some dependencies are just for spring-boot-standalone version. just-dependency profile have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See [pom file](https://github.com/peterszatmary/spring-boot-standalone-dependency-profiles/blob/master/pom.xml). If  you need dependencies that are just for just-dependency profile, fill free add them with dependencies tag.
 
 
 
 
-## How to run it
+## How to build them
 
 
 From from your preffered IDE or from command line.
@@ -150,7 +156,7 @@ Standalone Spring Boot executable jar file
 mvn clean install -P spring-boot-standalone
 ```
 
-Dependency jar file
+Dependency jar file ready to use like dependency in your projects
 
 ```shell
 mvn clean install -P just-dependency
