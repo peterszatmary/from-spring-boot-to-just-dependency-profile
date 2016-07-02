@@ -19,7 +19,7 @@ public class ApplicationController {
     }
 
     @RequestMapping(value = "/car")
-    public @ResponseBody Car car(@RequestParam String owner) {
+    public @ResponseBody Car car(@RequestParam("owner name") String owner) {
         return new Car("BMW", new Owner(owner));
     }
 
