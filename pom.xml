@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.szatmary.peter</groupId>
     <artifactId>spring-boot-standalone-dependency-profiles</artifactId>
@@ -11,7 +11,7 @@
     <name>spring-boot-standalone-dependency-profiles</name>
     <description>Demo profiles project to build Spring Boot app or just minimal dependency</description>
 
-    
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -20,36 +20,36 @@
     </parent>
 
     <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<jsondoc.version>1.2.15</jsondoc.version>
-		<lombok.version>1.16.8</lombok.version>
-		<compiler.plugin.version>3.5.1</compiler.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <jsondoc.version>1.2.15</jsondoc.version>
+        <lombok.version>1.16.8</lombok.version>
+        <compiler.plugin.version>3.5.1</compiler.plugin.version>
         <junit.version>4.11</junit.version>
         <surefire.version>2.19.1</surefire.version>
-	</properties>
+    </properties>
 
 
-	<profiles>
-		<profile>
+    <profiles>
+        <profile>
             <id>just-dependency</id>
-			<build>
+            <build>
                 <finalName>just-dependency</finalName>
                 <!--
                     ................................
                     excluding from resources
                     ................................
                 -->
-				<resources>
-					<resource>
-						<directory>src/main/resources</directory>
-						<excludes>
-							<exclude>application.properties</exclude>
-							<!-- add here more if you need exclude additional files -->
-						</excludes>
-						<filtering>false</filtering>
-					</resource>
-				</resources>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources</directory>
+                        <excludes>
+                            <exclude>application.properties</exclude>
+                            <!-- add here more if you need exclude additional files -->
+                        </excludes>
+                        <filtering>false</filtering>
+                    </resource>
+                </resources>
 
                 <!-- for excluding from compile time !!! -->
                 <!-- COMPILE TIME  -->
@@ -106,87 +106,87 @@
                     </plugin>
 
                 </plugins>
-			</build>
+            </build>
 
-			<!-- no dependencies here because
-			 everything what is needed for jar package here is shared across profiles
-			 see : same (shared) dependencies for both profiles
-			 -->
+            <!-- no dependencies here because
+             everything what is needed for jar package here is shared across profiles
+             see : same (shared) dependencies for both profiles
+             -->
             <dependencies>
 
             </dependencies>
 
-		</profile>
+        </profile>
 
 
-		<profile>
-			<id>spring-boot-standalone</id>
+        <profile>
+            <id>spring-boot-standalone</id>
 
-			<dependencies>
+            <dependencies>
 
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter</artifactId>
-				</dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter</artifactId>
+                </dependency>
 
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </dependency>
 
-				<dependency>
-					<groupId>org.jsondoc</groupId>
-					<artifactId>jsondoc-ui-webjar</artifactId>
-					<version>${jsondoc.version}</version>
-				</dependency>
+                <dependency>
+                    <groupId>org.jsondoc</groupId>
+                    <artifactId>jsondoc-ui-webjar</artifactId>
+                    <version>${jsondoc.version}</version>
+                </dependency>
 
-				<dependency>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-test</artifactId>
-					<scope>test</scope>
-				</dependency>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-test</artifactId>
+                    <scope>test</scope>
+                </dependency>
 
-			</dependencies>
-			<build>
-				<finalName>standalone-spring-boot</finalName>
-				<plugins>
-					<plugin>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-maven-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+            </dependencies>
+            <build>
+                <finalName>standalone-spring-boot</finalName>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 
-	<!--
+    <!--
         ............................................
-	    Same (shared) dependencies for both profiles
+        Same (shared) dependencies for both profiles
         ............................................
-	-->
-	<dependencies>
+    -->
+    <dependencies>
 
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.jsondoc</groupId>
-			<artifactId>spring-boot-starter-jsondoc</artifactId>
-			<version>${jsondoc.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>org.jsondoc</groupId>
+            <artifactId>spring-boot-starter-jsondoc</artifactId>
+            <version>${jsondoc.version}</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 
 
