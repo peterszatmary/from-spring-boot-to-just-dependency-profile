@@ -320,8 +320,7 @@ After build ...
 
 ```shell
 java -jar standalone-spring-boot.jar
-localhost:8080/jsondoc-ui.html
-type jsondoc
+localhost:8080/jsondoc-ui.html?url=jsondoc
 ```
 
 ![jsondoc](https://github.com/peterszatmary/just-like-that/blob/master/imgs/spring-boot-standalone-dependency-profiles/jsondoc.png)
