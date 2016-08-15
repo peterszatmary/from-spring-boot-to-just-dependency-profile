@@ -22,5 +22,4 @@ public class ApplicationController {
     public @ResponseBody Car car(@RequestParam("owner name") String owner) {
         return new Car("BMW", new Owner(owner));
     }
-
 }

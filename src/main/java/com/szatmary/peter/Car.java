@@ -20,5 +20,4 @@ public @Data class Car {
 
     @ApiObjectField(description = "Car owner")
     private Owner owner;
-
 }
