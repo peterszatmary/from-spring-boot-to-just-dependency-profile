@@ -1,4 +1,7 @@
 # spring-boot-standalone-dependency-profiles
+
+[![Build Status](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile.svg?branch=master)](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile)
+
 Maven profiles for building standalone spring-boot app or just simple minimal dependency from one project.
 
 
