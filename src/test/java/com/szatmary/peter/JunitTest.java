@@ -1,4 +1,4 @@
-package com.szatmary.peter.jsondoc;
+package com.szatmary.peter;
 
 import org.junit.Assert;
 import org.junit.Test;
