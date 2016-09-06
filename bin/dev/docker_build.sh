@@ -1,0 +1,1 @@
+docker build -t peterszatmary/from-spring-boot-to-just-dependency-profile .

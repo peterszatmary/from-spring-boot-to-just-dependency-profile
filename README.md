@@ -151,7 +151,7 @@ In tag **excludes** you can add as many exclusions as you would like to have.
 ## How to build them
 
 
-From from your preffered IDE or from command line.
+From from your preferred IDE or from command line.
 
 Standalone Spring Boot executable jar file 
 
@@ -318,12 +318,40 @@ After build is created file **standalone-spring-boot.jar**.
 16 directories, 104 files
 ```
 
-After build ...
+## How to run
 
+
+### Without docker
+
+After build successful maven build
 
 ```shell
 java -jar standalone-spring-boot.jar
 localhost:8080/jsondoc-ui.html?url=jsondoc
 ```
+
+### With Docker
+
+Project has also Dockers. You can choose from docker for creating development environment or
+ deploying the app.
+
+#### For development
+
+```shell
+$  ./bin/dev/docker_build.sh
+$  ./bin/dev/docker_start.sh
+$$ mvn clean install -P spring-boot-standalone
+$$ java -jar ./target/standalone-spring-boot.jar
+$ localhost:8080/jsondoc-ui.html?url=jsondoc
+```
+
+#### For deployment
+
+```shell
+$  ./bin/deploy/docker_build.sh
+$  ./bin/deploy/docker_start.sh
+$  localhost:8080/jsondoc-ui.html?url=jsondoc
+```
+
 
 ![jsondoc](https://github.com/peterszatmary/just-like-that/blob/master/imgs/spring-boot-standalone-dependency-profiles/jsondoc.png)
