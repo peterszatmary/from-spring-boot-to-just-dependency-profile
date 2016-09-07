@@ -1,1 +1,1 @@
-docker build -t peterszatmary/jdk8 .
+docker build -t peterszatmary/from-spring-boot-to-just-dependency-profile .

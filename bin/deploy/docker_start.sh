@@ -1,1 +1,1 @@
-docker run --rm=true -p 8080:8080 -ti peterszatmary/jdk8
+docker run -p 8080:8080 -t peterszatmary/from-spring-boot-to-just-dependency-profile
