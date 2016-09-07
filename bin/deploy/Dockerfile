@@ -1,7 +1,3 @@
-# Maven 3.3.9
-# Java openjdk8
-# for dev purpose
-
 FROM gliderlabs/alpine:3.4
 MAINTAINER Peter Szatmary <peter.szatmary@gmail.com>
 
@@ -30,6 +26,13 @@ RUN tar -xvf apache-maven-$MAVEN_VERSION-bin.tar.gz
 RUN rm -r apache-maven-$MAVEN_VERSION-bin.tar.gz
 
 WORKDIR /home/fsbtjdp
+RUN git clone https://github.com/peterszatmary/from-spring-boot-to-just-dependency-profile.git
+WORKDIR /home/fsbtjdp/from-spring-boot-to-just-dependency-profile
+
 EXPOSE 8080
 
-CMD ["/bin/sh"]
+RUN mvn clean install -P spring-boot-standalone
+
+CMD ["/bin", "java" "-jar", "./target/standalone-spring-boot.jar"]
+
+#CMD ["java", "-jar" "./target/spring-boot-standalone.jar" ]
