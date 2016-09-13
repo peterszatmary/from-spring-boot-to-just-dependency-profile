@@ -1,6 +1,6 @@
 language: java
 jdk:
 - oraclejdk8
-script:
+install:
 - mvn clean package -P just-dependency
 - mvn clean package -P spring-boot-standalone
