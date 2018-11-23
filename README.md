@@ -16,9 +16,7 @@ Everything is about [Maven](https://maven.apache.org/) pom.xml files and 2 simpl
 **Maven profiles** :
 
 -   **just-dependency** creates dependency jar with no Spring like libraries, Tests, Java files in there. Creates just minimalistic jar dependency ready to use.
-
 -   **spring-boot-standalone** creates Spring Boot executable application.
-
 
 We have basic project with JsonDoc here. This is the starting point. One big executable Spring Boot jar file. Now we need exclude files from project on build time and create minimalistic dependency jar file.
 
