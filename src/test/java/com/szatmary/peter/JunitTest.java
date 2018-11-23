@@ -4,13 +4,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * test used in both profiles
+ * test used in both profiles.
  */
 public class JunitTest {
 
     @Test
     public void testIt() {
-        Assert.assertTrue(true); // this test always OK
+        Assert.assertTrue(2 > 0); // this test always OK
     }
-
 }

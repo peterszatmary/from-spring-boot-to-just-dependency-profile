@@ -3,7 +3,6 @@
 # for dev purpose
 
 FROM gliderlabs/alpine:3.4
-MAINTAINER Peter Szatmary <peter.szatmary@gmail.com>
 
 ENV REFRESHED_AT 2016-09-06
 

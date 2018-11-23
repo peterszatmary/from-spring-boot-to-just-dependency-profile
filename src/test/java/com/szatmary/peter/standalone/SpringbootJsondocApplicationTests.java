@@ -20,5 +20,4 @@ public class SpringbootJsondocApplicationTests {
     public void contextLoads() {
 
     }
-
 }

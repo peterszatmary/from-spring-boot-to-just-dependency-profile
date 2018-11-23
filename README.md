@@ -1,50 +1,47 @@
-# spring-boot-standalone-dependency-profiles
+# spring-boot-standalone-dependency-profiles #
 
 [![Build Status](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile.svg?branch=master)](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ecc28fc4cb6240048cfc3a97ff394537)](https://www.codacy.com/app/peterszatmary/from-spring-boot-to-just-dependency-profile?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=peterszatmary/from-spring-boot-to-just-dependency-profile&amp;utm_campaign=Badge_Grade)
 
 Maven profiles for building standalone spring-boot app or just simple minimal dependency from one project.
 
-
-## Purpose
+## Purpose ##
 If you need to create from your Spring Boot application just minimalistic dependency jar file
 with no Spring and other stuffs in there, this project does it for you.
 
-## How it works
+## How it works ##
 
 Everything is about [Maven](https://maven.apache.org/) pom.xml files and 2 simple [profiles](http://maven.apache.org/guides/introduction/introduction-to-profiles.html) that could everyone customize for yourself.
 
-
 **Maven profiles** :
 
-- **just-dependency** creates dependency jar with no Spring like libraries, Tests, Java files in there. Creates just minimalistic jar dependency ready to use.
+-   **just-dependency** creates dependency jar with no Spring like libraries, Tests, Java files in there. Creates just minimalistic jar dependency ready to use.
 
-- **spring-boot-standalone** creates Spring Boot executable application.
+-   **spring-boot-standalone** creates Spring Boot executable application.
 
 
 We have basic project with JsonDoc here. This is the starting point. One big executable Spring Boot jar file. Now we need exclude files from project on build time and create minimalistic dependency jar file.
 
-### What and when exclude ?
+### What and when exclude ###
 
 We have to deal with this 3 basic Maven phases :
 
-- **compile phase** compile project source codes
-- **test compile phase** compile project tests
-- **test phase** run project tests
-
+-   **compile phase** compile project source codes
+-   **test compile phase** compile project tests
+-   **test phase** run project tests
 
 Project does 4 different exclusion to achieve the goal.
 
-- **resources** exclusion
-- **Java sources** exclusion from compile phase
-- **Tests exclusion** from test compile phase
-- **Tests exclusion** from testing phase
+-   **resources** exclusion
+-   **Java sources** exclusion from compile phase
+-   **Tests exclusion** from test compile phase
+-   **Tests exclusion** from testing phase
 
 All exclusions are done in just-dependency profile of cource.
 
-### How to exclude resources
+### How to exclude resources ###
 
 In build tag 
-
 
 ```xml
 <resources>
@@ -61,8 +58,7 @@ In build tag
 
 Because project is simple we have just one properties file that we dont want to have in our minimalistic dependency jar. In tag **excludes** you can add as many exclusions as you would like to have. 
 
-
-### How to exclude Java sources from compile phase
+### How to exclude Java sources from compile phase ###
 
 Exclusion is done with [maven-compiler-plugin](https://maven.apache.org/plugins/maven-compiler-plugin/).
 On example is excluding every single java file with prefix name Spring. You can write your own exclusion patterns based on other strategies. For example create directory and exclude everything in there.
@@ -86,8 +82,7 @@ In tag **excludes** you can add as many exclusions as you would like to have.
 </plugin>
 ```
 
-
-### How to exclude Tests from test compile phase
+### How to exclude Tests from test compile phase ###
 
 Exclusion is done also with [maven-compiler-plugin](https://maven.apache.org/plugins/maven-compiler-plugin/).
 In this example are excluded all tests in directory standalone. This test are not compiled (that means you dont need dependencies for it) when jar file is created.
@@ -118,9 +113,7 @@ In tag **excludes** you can add as many exclusions as you would like to have.
 </plugin>
 ```
 
-
-### How to exclude Tests from testing phase
-
+### How to exclude Tests from testing phase ###
 
 Exclusion is done with [maven-surefire-plugin](http://maven.apache.org/surefire/maven-surefire-plugin/). Ignored (not ran) are all tests in standalone directory.
 
@@ -139,34 +132,27 @@ In tag **excludes** you can add as many exclusions as you would like to have.
 </plugin>
 ```
 
+## Notes ##
 
-## Notes
+-   Some dependencies are just for spring-boot-standalone version. just-dependency profile have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See [pom file](https://github.com/peterszatmary/spring-boot-standalone-dependency-profiles/blob/master/pom.xml). If  you need dependencies that are just for just-dependency profile, fill free add them with dependencies tag.
 
-
-- Some dependencies are just for spring-boot-standalone version. just-dependency profile have no dependencies here because all that this profile needs are present like shared dependencies accross profiles. See [pom file](https://github.com/peterszatmary/spring-boot-standalone-dependency-profiles/blob/master/pom.xml). If  you need dependencies that are just for just-dependency profile, fill free add them with dependencies tag.
-
-
-
-
-## How to build them
-
+## How to build them ##
 
 From from your preferred IDE or from command line.
 
 Standalone Spring Boot executable jar file 
 
-```shell
+```bash
 mvn clean install -P spring-boot-standalone
 ```
 
 Dependency jar file ready to use like dependency in your projects
 
-```shell
+```bash
 mvn clean install -P just-dependency
 ```
 
-
-## Result after just-dependency profile
+## Result after just-dependency profile ##
 
 After build is created file **just-dependency.jar**.
 
@@ -189,7 +175,7 @@ After build is created file **just-dependency.jar**.
 ```
 
 
-## Result after spring-boot-standalone profile
+## Result after spring-boot-standalone profile ##
 
 After build is created file **standalone-spring-boot.jar**.
 
@@ -318,26 +304,26 @@ After build is created file **standalone-spring-boot.jar**.
 16 directories, 104 files
 ```
 
-## How to run
+## How to run ##
 
 
-### Without docker
+### Without docker ###
 
 After build successful maven build
 
-```shell
+```bash
 java -jar standalone-spring-boot.jar
 localhost:8080/jsondoc-ui.html?url=jsondoc
 ```
 
-### With Docker
+### With Docker ###
 
 Project has also Dockers. You can choose from docker for creating development environment or
  deploying the app.
 
-#### For development
+#### For development ####
 
-```shell
+```bash
 $  ./bin/dev/docker_build.sh
 $  ./bin/dev/docker_start.sh
 $$ mvn clean install -P spring-boot-standalone
@@ -345,13 +331,12 @@ $$ java -jar ./target/standalone-spring-boot.jar
 $ localhost:8080/jsondoc-ui.html?url=jsondoc
 ```
 
-#### For deployment
+#### For deployment ####
 
-```shell
+```bash
 $  ./bin/deploy/docker_build.sh
 $  ./bin/deploy/docker_start.sh
 $  localhost:8080/jsondoc-ui.html?url=jsondoc
 ```
-
 
 ![jsondoc](https://github.com/peterszatmary/just-like-that/blob/master/imgs/spring-boot-standalone-dependency-profiles/jsondoc.png)
