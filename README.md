@@ -174,7 +174,6 @@ After build is created file **just-dependency.jar**.
 7 directories, 6 files
 ```
 
-
 ## Result after spring-boot-standalone profile ##
 
 After build is created file **standalone-spring-boot.jar**.
@@ -305,7 +304,6 @@ After build is created file **standalone-spring-boot.jar**.
 ```
 
 ## How to run ##
-
 
 ### Without docker ###
 

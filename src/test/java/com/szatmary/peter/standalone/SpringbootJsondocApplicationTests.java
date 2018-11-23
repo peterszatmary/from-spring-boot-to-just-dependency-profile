@@ -1,6 +1,7 @@
 package com.szatmary.peter.standalone;
 
 import com.szatmary.peter.SpringbootJsondocApplication;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -18,6 +19,6 @@ public class SpringbootJsondocApplicationTests {
 
     @Test
     public void contextLoads() {
-
+        Assert.assertTrue(2 > 0);
     }
 }
