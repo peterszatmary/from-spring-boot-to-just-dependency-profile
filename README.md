@@ -1,7 +1,6 @@
 # spring-boot-standalone-dependency-profiles #
 
 [![Build Status](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile.svg?branch=master)](https://travis-ci.org/peterszatmary/from-spring-boot-to-just-dependency-profile)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ecc28fc4cb6240048cfc3a97ff394537)](https://www.codacy.com/app/peterszatmary/from-spring-boot-to-just-dependency-profile?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=peterszatmary/from-spring-boot-to-just-dependency-profile&amp;utm_campaign=Badge_Grade)
 
 Maven profiles for building standalone spring-boot app or just simple minimal dependency from one project.
 

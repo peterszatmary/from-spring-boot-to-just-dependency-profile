@@ -1,11 +1,9 @@
 package com.szatmary.peter.standalone;
 
-import com.szatmary.peter.SpringbootJsondocApplication;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * this test class have for purpose compilation errors if you
@@ -13,8 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  *
  *  in profile just-dependency is ignored in testCompile and test phase.
  */
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = SpringbootJsondocApplication.class)
+@RunWith(SpringRunner.class)
 public class SpringbootJsondocApplicationTests {
 
     @Test

@@ -6,7 +6,6 @@
     <groupId>com.szatmary.peter</groupId>
     <artifactId>spring-boot-standalone-dependency-profiles</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
 
     <name>spring-boot-standalone-dependency-profiles</name>
     <description>Demo profiles project to build Spring Boot app or just minimal dependency</description>
@@ -14,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.3.5.RELEASE</version>
+        <version>2.7.3</version>
         <relativePath/>
     </parent>
 
@@ -22,10 +21,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
         <jsondoc.version>1.2.15</jsondoc.version>
-        <lombok.version>1.16.8</lombok.version>
-        <compiler.plugin.version>3.5.1</compiler.plugin.version>
-        <junit.version>4.11</junit.version>
-        <surefire.version>2.19.1</surefire.version>
+        <lombok.version>1.18.24</lombok.version>
+        <compiler.plugin.version>3.10.1</compiler.plugin.version>
+        <junit.version>4.13.1</junit.version>
+        <surefire.version>3.0.0-M7</surefire.version>
     </properties>
 
 
@@ -114,15 +113,12 @@
             <dependencies>
 
             </dependencies>
-
         </profile>
 
 
         <profile>
             <id>spring-boot-standalone</id>
-
             <dependencies>
-
                 <dependency>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter</artifactId>
@@ -144,7 +140,6 @@
                     <artifactId>spring-boot-starter-test</artifactId>
                     <scope>test</scope>
                 </dependency>
-
             </dependencies>
             <build>
                 <finalName>standalone-spring-boot</finalName>
@@ -165,7 +160,6 @@
         ............................................
     -->
     <dependencies>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -184,7 +178,5 @@
             <artifactId>spring-boot-starter-jsondoc</artifactId>
             <version>${jsondoc.version}</version>
         </dependency>
-
     </dependencies>
-
 </project>
